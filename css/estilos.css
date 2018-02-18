@@ -1,0 +1,237 @@
+/* Hola, hay algunos detalles que no pude completar:
+  1) En la página principal no pude poder centrado la imagen de paisajes y el texto que está abajo trate de ponerlo al final del div, pero no pude.
+  2) Quiero saber si hay forma de poner formato para que pueda recortar la imagen del retato y dejar el mismo alto que la imagen de paisaje para que se vea más estético.
+  3) No sé por qué razón en la pagína de paisajes y retratos las dos últimas (5 y 6) no tienen el sombreado.
+  4) En qué "funciones" debo usar -webkit- no estoy seguro si en todas o sólo algunas específicas.
+  5) Tengo el mismo código en el css de paisajes y retratos sin embargo en el efecto inicial (de entrada) la página de paisajes se mueve ligemanente a la derecha, pero no lo hace en el formato para móvil.
+Agradezco sus comentario, saludos.
+ */
+
+.contenido {
+  width: 900px;
+  margin: 0 auto;
+}
+
+body {
+	font-family: 'Dancing Script';
+  background-color: #02010a;
+  margin: 0;
+  color: black;
+}
+
+.top-bar {
+  height: auto;
+  background-color: #5b7989;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: -webkit-flex; /* Chrome, Safari, Opera */
+	display: flex;
+	-webkit-flex-flow: row wrap; /* Chrome, Safari, Opera */
+	flex-flow: row wrap;
+}
+
+.top-bar div {
+  width: 50%;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0px;
+  padding: 20px;
+  color: white;
+  text-shadow: 2px 2px 2px #02010a;
+}
+
+.nav {
+  display: -webkit-flex; /* Chrome, Safari, Opera */
+  display: flex;
+  -webkit-justify-content: flex-end; /* Chrome, Safari, Opera */
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.nav ul {
+  font-size: 1.2em;
+  margin: 0px;
+  padding: 20px;
+  list-style: none;
+}
+
+.nav li {
+  display: inline;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.top-bar .nav a:link {
+  color: white;
+}
+
+.top-bar .nav .inicio a:link {
+  text-decoration: none;
+}
+
+.top-bar .nav .inicio .inicio1 {
+  color: white;
+}
+
+.top-bar .nav .paisajes .paisajes1 {
+  color: white;
+}
+
+.top-bar .nav .retratos .retratos1 {
+  color: white;
+}
+
+.contenedor1 {
+  background-color: #82c3a6;
+  text-align: center;
+	width: 100%;
+}
+
+.contenedor1 img {
+  width: 80%;
+  margin: 2em auto;
+  padding: 0;
+}
+
+.contenedor2 {
+  background-color: #d5c75f;
+  display: -webkit-flex; /* Chrome, Safari, Opera */
+	display: flex;
+	-webkit-flex-flow: row wrap; /* Chrome, Safari, Opera */
+	flex-flow: row wrap;
+}
+
+.contenedor2 div {
+  text-align: center;
+	width: 50%;
+}
+
+.contenedor2 img {
+  width: 80%;
+  margin: 2em auto;
+  padding: 0;
+  border: 1px solid black;
+}
+
+img {
+    filter: drop-shadow(2px 2px 0 #02010a);
+}
+
+figcaption {
+  font-size: 1.5em;
+  padding: 1em;
+}
+
+figcaption a {
+  color: black;
+}
+
+#imagen-paisaje img {
+	transition-property: transform: rotate;
+  transition-duration: 1s;
+  transition-property: filter: drop-shadow; border;
+	transition-duration: 1s;
+}
+
+#imagen-paisaje img:hover {
+	transform: rotate(10deg);
+  filter: drop-shadow(2px 2px 0 #82c3a6);
+  border: 2px solid #82c3a6;
+}
+
+#imagen-retrato img {
+	transition-property: transform: translate3d;
+  transition-duration: 1s;
+  transition-property: filter: drop-shadow; border;
+	transition-duration: 1s;
+}
+
+#imagen-retrato img:hover {
+	transform: translate3d(20px, -5px, 0px);
+  filter: drop-shadow(2px 2px 0 #82c3a6);
+  border: 2px solid #82c3a6;
+}
+
+.bottom-bar {
+  background-color: #C6d5c5;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  -webkit-display: flex; /* Chrome, Safari, Opera */
+	display: flex;
+	-webkit-flex-flow: row wrap; /* Chrome, Safari, Opera */
+	flex-flow: row wrap;
+}
+
+.bottom-bar div {
+  width: 25%;
+  text-align: left;
+}
+
+.bottom-bar div h2 {
+  font-size: 2em;
+  margin: 0;
+  padding: 25px 25px 5px 25px;
+}
+
+.bottom-bar div p {
+  font-size: 1em;
+  margin: 0;
+  padding: 0px 25px 25px 25px;
+}
+
+.bottom-bar div img {
+  width: 1em;
+  filter: drop-shadow(0 0 0);
+}
+
+
+@media (max-width: 899px) {
+  .contenido {
+    width: 480px;
+  }
+  .top-bar div {
+    width: 100%;
+  }
+  .contenedor2 div {
+    width: 100%;
+  }
+  .bottom-bar div {
+    width: 100%;
+  }
+  h1 {
+    text-align: center;
+  }
+  .nav {
+    -webkit-display: flex; /* Chrome, Safari, Opera */
+    display: flex;
+    -webkit-justify-content: center; /* Chrome, Safari, Opera */
+    justify-content: center;
+    -webkit-align-items: center; /* Chrome, Safari, Opera */
+    align-items: center;
+  }
+}
+
+
+@keyframes contenido-animacion {
+0% {
+position: relative;
+margin-top: 150%;
+}
+60% {
+position: relative;
+margin-top: -5%;
+}
+100% {
+position: relative;
+margin-top: 0%;
+}
+}
+
+.contenido {
+animation-name: contenido-animacion;
+animation-duration: 1s;
+-webkit-animation-delay: 0s; /* Chrome, Safari, Opera */
+animation-delay: 0s;
+}
